@@ -18,4 +18,7 @@ module.exports = {
       extend: {},
     },
     plugins: [],
+    experimental:{
+      applyComplexClasses:true,
+    },
 };

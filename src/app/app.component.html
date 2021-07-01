@@ -1,2 +1,25 @@
-<app-todolist>alo alo</app-todolist>
-<h1 class="mt-[100px] bg-[red]">hello world</h1>
+<app-header></app-header>
+
+<div class="w-[50%] mx-auto">
+
+    <div>
+        <form action="" class="mt-5">
+            <input class="input-controll" type="text" [(ngModel)]="title" [ngModelOptions]="{ standalone: true }" />
+        </form>
+
+        <p class="text-center">{{ title }}</p>
+    </div>
+
+    <app-product></app-product>
+
+
+
+    <div>
+        <ng-container *ngIf="age > 10; else elseTemplate">
+            alo alo > 10
+        </ng-container>
+        <ng-template #elseTemplate> alo alo <= 10 </ng-template>
+    </div>
+
+    <button (click)="handleClick()">click me</button>
+</div>
