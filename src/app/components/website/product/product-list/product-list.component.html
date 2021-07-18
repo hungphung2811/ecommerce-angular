@@ -1,0 +1,41 @@
+<table class="table border-collapse">
+    <thead>
+        <tr>
+            <th class="th-table">
+                #
+            </th>
+            <th class="th-table">
+                name
+            </th>
+            <th class="th-table">
+                image
+            </th>
+            <th class="th-table">
+                price
+            </th>
+            <th class="th-table">
+                action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; let i = index">
+            <td class="td-table">
+                {{i+1}}
+            </td>
+            <td class="td-table">
+                {{product.name}}
+            </td>
+            <td class="td-table">
+                <img class="mx-auto" width="50" [src]="product.image" [alt]="product.name">
+            </td>
+            <td class="td-table">
+                {{product.price}}
+            </td>
+            <td class="td-table">
+                <button class="bg-green-500 text-white text-[15px] btn mr-3" [routerLink]="[ '/product', product.id ]">detail product</button>
+                <button class="bg-red-500 text-white text-[15px] btn">remove product</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

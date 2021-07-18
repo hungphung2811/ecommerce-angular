@@ -1,0 +1,7 @@
+<p>product-detail works!</p>
+<div *ngIf="product">
+    <img width="200" [src]="product.image" [alt]="product.name">
+    {{product.name}}
+</div>
+
+<a routerLink="/product/2">product2</a>
