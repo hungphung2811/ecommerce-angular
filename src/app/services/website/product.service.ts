@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductService {
-  products: IProduct[] = [];
   API: string = 'https://hungpvph12160-pake-user.herokuapp.com/products';
   constructor(private http: HttpClient) { }
   getProductList(): Observable<IProduct[]> {
@@ -15,14 +14,11 @@ export class ProductService {
     return this.http.get<IProduct[]>(this.API)
   }
 
+  deleteProduct(id: number): Observable<IProduct> {
+    return this.http.delete<IProduct>(`${this.API}/${id}`)
+  }
+
   getProductById(id: number): Observable<IProduct> {
-    // id = parseInt(id);
-    // const product = this.products.find(p => p.id === id);
-    // if (product) {
-    //   return of(product).pipe(delay(500));
-    // } else {
-    //   return throwError(new Error('404 not Found'))
-    // }
     return this.http.get<IProduct>(`${this.API}/${id}`);
   }
 }

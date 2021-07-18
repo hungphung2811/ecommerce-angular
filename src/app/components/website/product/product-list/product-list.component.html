@@ -33,8 +33,11 @@
                 {{product.price}}
             </td>
             <td class="td-table">
-                <button class="bg-green-500 text-white text-[15px] btn mr-3" [routerLink]="[ '/product', product.id ]">detail product</button>
-                <button class="bg-red-500 text-white text-[15px] btn">remove product</button>
+                <button class="bg-green-500 text-white text-[15px] btn mr-3"
+                    [routerLink]="[ '/product', product.id ]">detail</button>
+                <button class="bg-green-500 text-white text-[15px] btn mr-3"
+                    [routerLink]="[ '/product/edit', product.id ]">edit</button>
+                <button class="bg-red-500 text-white text-[15px] btn" (click)="onDelete(product.id)">remove</button>
             </td>
         </tr>
     </tbody>

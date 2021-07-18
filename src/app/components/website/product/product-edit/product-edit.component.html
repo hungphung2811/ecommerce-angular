@@ -1,0 +1,14 @@
+<div class="mt-4 w-[50%]">
+    <p>product-edit works!</p>
+    <form *ngIf="product" #formEdit="ngForm" (ngSubmit)="handleSubmit(formEdit)">
+        <div class="mb-3">
+            <label for="">name</label>
+            <input type="text" [(ngModel)]="product.name" name="name" class="input-controll">
+        </div>
+        <div class="mb-3">
+            <label for="">price</label>
+            <input type="number" [(ngModel)]="product.price" name="price" class="input-controll">
+        </div>
+        <button>save</button>
+    </form>
+</div>
